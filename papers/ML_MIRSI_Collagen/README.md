@@ -26,7 +26,7 @@ The overview of this study is illustrated in the following figure.![overview](fi
 
 ## Data preprocessing
 An example of MIRSI data is shown in the following figure.  
-![overview](figures/fig2.png)
+![example MIRSI](figures/fig2.png)
 The spectra is pre-processed using PCA for noise reduction, where PCA was performed and reprojected back to the original basis, but only including the first 40 principal components. 
 
 
@@ -36,8 +36,8 @@ code\preprocessSpectra.mlx
 
 SHG data acquired using identical tissue samples are used to label the spectra to differentiate collagen from non-collagen. 
 Because they were acquired using different optical setups, they have different specifications and need to be co-registered. 
-The registration is done using MATLAB [MATLAB registration](https://www.mathworks.com/help/images/find-image-rotation-and-scale.html) 
-and is done by determining the inverse affine transform given a set of paired landmarks. The landmarks pairs are chosen manually.
+The registration is done using [a registration method from MATLAB](https://www.mathworks.com/help/images/find-image-rotation-and-scale.html) 
+and is done by determining the inverse affine transform given a set of paired landmarks. The set of paired landmarks are chosen manually.
 
 
 ```
@@ -45,9 +45,24 @@ code\registerFOV.mlx
 ```
 
 ## Training the random forest 
+Once the spectra of collagen and non-collagen are obtained, the random forest algorithm can be trained. Here the TreeBagger class from MATLAB was used. The parameters used can be found in the code. 
+
+```
+code\trainRF.mlx
+```
+Once trained, the RF model is used to calculate the probability of collagen for each MIRSI spectra from the validation set. The spectra is then assigned a probability of how likely it is to come from a collagen. 
+We used a threshold of >50% to determine whether a spectra contains a collagen or not. This approach produces a lot of noise, but we are including the maximum amount of collagen. After the collagen determination has 
+been done to all pixels, essentially we have generated a collagen distribution image from the MIRSI data. The noisy collagen data that is not coming from a larger mass (e.g. a fiber) is omitted,
+ because we are focusing on fibrillar collagen. 
+
+An example of the final result is as illustrated in the following figure. 
+
+![RF MIRSI](figures/fig3.png)
+
 
 
 ## Validation
+ 
 
 
 
