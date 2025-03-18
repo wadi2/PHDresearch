@@ -26,11 +26,13 @@ The overview of this study is illustrated in the following figure.![overview](fi
 
 ## Data preprocessing
 An example of MIRSI data is shown in the following figure.  
-[overview](figures/fig2.png)
+![overview](figures/fig2.png)
 The spectra is pre-processed using PCA for noise reduction, where PCA was performed and reprojected back to the original basis, but only including the first 40 principal components. 
-'''
-preprocessSpectra.mlx
-'''
+
+
+```
+code\preprocessSpectra.mlx
+```
 
 ## Training the random forest 
 
