@@ -53,7 +53,11 @@ code\trainRF.mlx
 Once trained, the RF model is used to calculate the probability of collagen for each MIRSI spectra from the validation set. The spectra is then assigned a probability of how likely it is to come from a collagen. 
 We used a threshold of >50% to determine whether a spectra contains a collagen or not. This approach produces a lot of noise, but we are including the maximum amount of collagen. After the collagen determination has 
 been done to all pixels, essentially we have generated a collagen distribution image from the MIRSI data. The noisy collagen data that is not coming from a larger mass (e.g. a fiber) is omitted,
- because we are focusing on fibrillar collagen. 
+because we are focusing only on fibrillar collagen. 
+
+```
+code\denoisingMIRSI.mlx
+```
 
 An example of the final result is as illustrated in the following figure. 
 
@@ -63,6 +67,7 @@ An example of the final result is as illustrated in the following figure.
 
 ## Validation
  
+
 
 
 
