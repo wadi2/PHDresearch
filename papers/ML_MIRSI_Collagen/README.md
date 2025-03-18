@@ -16,9 +16,13 @@ This study presents a **machine learning-assisted multimodal imaging method** co
 
 
 ## 🧬 Scientific Background
-Collagen morphology, the so called tumor associated collagen signature (TACS), plays an important role and can be used as a biomarker for various cancer types at various stages. 
-MIRSI is a relatively new imaging technique that can provide chemical signal of sample. In this study, we do imaging of tissues using MIRSI. Subsequently, the spectra is labelled to differentiate collagen from non-collagen. 
-The ground truth label comes from SHG image of the identical tissue. The overview of this study is illustrated in ![overview](figures/fig1.png)
+Collagen morphology is cancerous tissues changes as cancer progresses. This is the so called tumor associated collagen signature (TACS), which plays an important role in cancer progression, 
+and can be used as a biomarker to determine cancer stages. 
+MIRSI is a relatively new imaging technique that can provide chemical signal of sample. In this study, we do imaging of tissues using MIRSI to do a preliminary study of the chemical signal of collagen.
+For this, the collagen spectra needs to be labelled to differentiate collagen from non-collagen. The ground truth label comes from SHG image of the identical tissue. Given that the chemical spectra is very complex, 
+we used Random Forest to evaluate key differentatior between collagen and non-collagen. 
+
+The overview of this study is illustrated in the following figure.![overview](figures/fig1.png)
 
 
 ## 📌 Citation
