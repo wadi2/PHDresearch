@@ -25,7 +25,12 @@ we used Random Forest to identify key differentatiors between collagen and non-c
 The overview of this study is illustrated in the following figure.![overview](figures/fig1.png)
 
 ## Data preprocessing
-
+An example of MIRSI data is shown in the following figure.  
+[overview](figures/fig2.png)
+The spectra is pre-processed using PCA for noise reduction, where PCA was performed and reprojected back to the original basis, but only including the first 40 principal components. 
+'''
+preprocessSpectra.mlx
+'''
 
 ## Training the random forest 
 
