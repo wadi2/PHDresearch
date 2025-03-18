@@ -34,6 +34,16 @@ The spectra is pre-processed using PCA for noise reduction, where PCA was perfor
 code\preprocessSpectra.mlx
 ```
 
+SHG data acquired using identical tissue samples are used to label the spectra to differentiate collagen from non-collagen. 
+Because they were acquired using different optical setups, they have different specifications and need to be co-registered. 
+The registration is done using MATLAB [MATLAB registration](https://www.mathworks.com/help/images/find-image-rotation-and-scale.html) 
+and is done by determining the inverse affine transform given a set of paired landmarks. The landmarks pairs are chosen manually.
+
+
+```
+code\registerFOV.mlx
+```
+
 ## Training the random forest 
 
 
