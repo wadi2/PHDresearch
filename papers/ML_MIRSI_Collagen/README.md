@@ -66,9 +66,11 @@ An example of the final result is as illustrated in the following figure.
 
 
 ## Validation
- 
+ Now that we can generate collagen distribution from our MIRSI data, we need to validate the results. The validation is done using [boundary F-score](https://www.mathworks.com/help/images/ref/bfscore.html), 
+ fiber dominant direction, and alignment compared to the SHG ground truth.  The dominant direction and alignment are calculated using [OrientationJ](https://bigwww.epfl.ch/demo/orientation/). 
+ The overall result is shown in the following figure. 
 
-
+![Validation](figures/fig4.png)
 
 
 
