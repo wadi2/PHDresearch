@@ -23,6 +23,22 @@ During the pandemic, there was a need to quickly test immunity against COVID19 a
 
 ![Overview](figures/Figure1.png)
 
+## Training the random forest 
+The detail about the random forest algorithm can be found in the following notebook. 
+
+```
+notebook\immunityProfiling_COVID19Project_code.mlx
+```
+
+
+
+## Validation
+
+| Data Type                             | Infection Rate [%] (95% CI) | Vaccination Rate [%] (95% CI) | Omicron Share [%] (95% CI) |
+|----------------------------------------|----------------------------|-------------------------------|----------------------------|
+| **Epidemiological COVID-19 data**      | 65 (64–70)                 | 84                            | 30                         |
+| **ML-aided nanobiosensor's predictions** | 55 (48–61)                 | 87 (82–92)                    | 27 (19–36)                 |
+
 
 
 ## Citation
