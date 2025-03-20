@@ -14,6 +14,8 @@ This study presents a **machine learning-assisted multimodal imaging method** co
 - `code/` → MATLAB scripts for ML model training and data preprocessing
 - `figures/` → Key figures and result plots
 
+## Data
+the data can be found [here](https://drive.google.com/drive/folders/14eXJC-Hmc4882gPiHnwWszhHrrMk-6DJ?usp=sharing).
 
 ## 🧬 Scientific background
 Collagen morphology is cancerous tissues changes as cancer progresses. This is the so called tumor associated collagen signature (TACS), which plays an important role in cancer progression, 
@@ -67,14 +69,22 @@ An example of the final result is as illustrated in the following figure.
 
 ## Validation
  Now that we can generate collagen distribution from our MIRSI data, we need to validate the results. The validation is done using [boundary F-score](https://www.mathworks.com/help/images/ref/bfscore.html), 
- fiber dominant direction, and alignment compared to the SHG ground truth.  The dominant direction and alignment are calculated using [OrientationJ](https://bigwww.epfl.ch/demo/orientation/). 
+ fiber dominant direction, and alignment between the SHG ground truth and the generated RF-MIRSI images.  The dominant direction and alignment are calculated using [OrientationJ](https://bigwww.epfl.ch/demo/orientation/). 
  The overall result is shown in the following figure. 
 
 ![Validation](figures/fig4.png)
 
+We can see in (a) that the BF-score yields high score (>0.8) when we give a pixel tolerance of at least 4, which is reasonable given registration mismatch between the two modalities. Values are also calculated 
+for different collagen probability threshold, and it can be seen that the score is the highest when we keep the lowest probability threshold (>50%) as it keeps the maximum amount of collagen pixel. The difference in dominant direction between the RF-MIRSI and the corresponding SHG has a mean around 0 degree (b) and has Pearson's R of 0.82 (c), which indicates high correlation. Similarly, alignment correlation between the two modalities is also positive (Pearson's R 0.66, d). 
 
+## Spectra interpretation 
+Now that we are confident about our model's ability to segment collagen from non-collagen in the tissue, we can inspect the training spectra and the predictor importance that our model gives us. 
+The predictor importance is calculated by removing a feature (in this case a wavenumber) from the model and compare it with the model that still include the feature. The more important a feature is, 
+the more error the model will have when it is removed. Then everything is normalized to the maximum value across all features; see (a) in the figure below. 
 
+![Feature Importance](figures/fig5.png)
 
+It is interesting to see many important features aggregate around 1360 to 1420. When we see the average spectra and their standard deviations for collagen vs non-collagen from the training data. On average the data is actually very similar between them in that region. This leads us to hypothesize that there is something of biochemical importance in that region, and seems like hydroxy-proline, an amino acide with high abundance (~22%) in collagen, has strong IR features in there. More discussion can be found in the paper. 
 
 ## 📌 Citation
 ```bibtex
