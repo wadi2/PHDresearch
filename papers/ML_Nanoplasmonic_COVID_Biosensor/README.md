@@ -33,11 +33,11 @@ notebook\immunityProfiling_COVID19Project_code.mlx
 
 
 ## Validation
-
+The validation is done using publicly available epidemiological data. 
 | Data Type                             | Infection Rate [%] (95% CI) | Vaccination Rate [%] (95% CI) | Omicron Share [%] (95% CI) |
 |----------------------------------------|----------------------------|-------------------------------|----------------------------|
 | **Epidemiological COVID-19 data**      | 65 (64–70)                 | 84                            | 30                         |
-| **ML-aided nanobiosensor's predictions** | 55 (48–61)                 | 87 (82–92)                    | 27 (19–36)                 |
+| **ML-aided nanobiosensor's predictions** | 55 (48–61)                 | 87 (82–92)                    | 27 (19–36)               |
 
 
 
