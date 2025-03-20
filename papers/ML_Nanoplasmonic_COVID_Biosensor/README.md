@@ -1,4 +1,4 @@
-# COVID-19 Immunity Profiling using Random Forest
+# COVID-19 Immunity Profiling using Random Forest and Nanoplasmonic Sensor
 
 ## Overview
 This repository contains a **Jupyter Notebook** implementing a **Random Forest classifier** for immunity profiling in **COVID-19 screening**. The code classifies **unknown samples** into predefined immunity categories using **known sample data** from `.csv` files.
@@ -17,6 +17,12 @@ The notebook follows these key steps:
 - `notebooks/` - Contains the Jupyter Notebook `immunityProfiling_COVID19Project_code.ipynb`.
 - `data/` - Sample `.csv` datasets used for training and classification.
 - `figures/` - Figures from the publication.
+
+## Scientific Introduction 
+During the pandemic, there was a need to quickly test immunity against COVID19 and vaccination status of a person. Our group developed a nanooptical sensor to measure immunity and vaccination status based on blood serum. The data is multidimensional and therefore needs to be evaluated using a random forest algorithm. An overview of the technology is shown in the following figure. 
+
+![Overview](figures/Figure1.png)
+
 
 
 ## Citation
