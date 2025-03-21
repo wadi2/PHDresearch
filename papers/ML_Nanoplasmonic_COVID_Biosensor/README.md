@@ -27,7 +27,7 @@ During the pandemic, there was a need to quickly test immunity against COVID19 a
 The detail about the random forest algorithm can be found in the following notebook. 
 
 ```
-notebook\immunityProfiling_COVID19Project_code.mlx
+notebook\immunityProfiling_COVID19Project_code.ipynb
 ```
 
 
